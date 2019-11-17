@@ -79,7 +79,7 @@ async function getGeoData(code) {
 }
 
 export async function getCountry(countryname) {
-  const country = await restCountries.findByFullName(countryname);
+  const country = await restCountries.findByName(countryname);
   let map = L.map("map").setView(country[0].latlng, 5);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
