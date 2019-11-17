@@ -98,6 +98,7 @@ p.sumari {
 #map-container {
   margin: 20px 0;
 }
+.continents,
 .countries {
   display: flex;
   flex-flow: column nowrap;
@@ -180,18 +181,6 @@ p.sumari {
   text-align: left;
   list-style: none;
 }
-/*
-ul#socialmedia {
-  padding: 15px 0 10px;
-  text-align: center;
-  font-size: 1.6em;
-}
-
-ul#socialmedia li {
-  padding: 0 10px;
-  display: inline;
-  line-height: 1.2em;
-}*/
 
 #footermenu ul {
   padding: 0 0 20px;
