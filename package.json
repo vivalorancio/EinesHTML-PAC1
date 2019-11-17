@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm-run-all clean copydata parcel:dev ",
     "build": "npm-run-all clean copydata parcel:build ",
     "parcel:dev": "parcel *.html *.js  img/*.*",
@@ -26,8 +25,7 @@
     "parcel-bundler": "^1.12.4",
     "rest-countries-node": "^1.1.2",
     "rimraf": "^3.0.0",
-    "wikijs": "^6.0.1",
-    "world-countries": "^2.1.0"
+    "wikijs": "^6.0.1"
   },
   "dependencies": {}
 }
