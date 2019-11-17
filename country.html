@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="author" content="Víctor Hugo Mateu Piñol" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="language" content="en" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <title>Eines HTML i CSS | Countries of the World</title>
+    <!---
+
+    FAVICON
+    
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+-->
+
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <script src="./countries.js"></script>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="headertop">
+        <div id="lang">
+          <ul>
+            <li><a href="">CA</a></li>
+            <li><a href="">ES</a></li>
+            <li><a href="">EN</a></li>
+          </ul>
+        </div>
+        <div id="headerlogo">
+          <a href="index.html"
+            ><img alt="Countries of the World" src="img/logo.png"
+          /></a>
+        </div>
+      </div>
+      <div id="headermenu">
+        <ul>
+          <li><a href="continent.html?name=africa">Africa</a></li>
+          <li><a href="continent.html?name=americas">Americas</a></li>
+          <li><a href="continent.html?name=asia">Asia</a></li>
+          <li><a href="continent.html?name=europe">Europe</a></li>
+          <li><a href="continent.html?name=oceania">Oceania</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="main">
+      <div class="wrap">
+        <div id="map-container">
+          <div id="map"></div>
+        </div>
+        <h3 id="countryname"></h3>
+        <p class="sumari"></p>
+        <div class="dades"></div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="contact">
+        <img alt="Countries of the World" src="img/logo.png" />
+        <!--
+        <ul class="fa-ul">
+          <li>
+            <span class="fa-li"><i class="fas fa-map-marker"></i></span>
+            <address>PlaÃ§a del Poblenou, 1. 08018 Barcelona</address>
+          </li>
+          <li>
+            <span class="fa-li"><i class="fas fa-phone"></i></span>Tel. 93 555
+            55 55
+          </li>
+          <li>
+            <span class="fa-li"><i class="far fa-envelope"></i></span
+            ><a href="mailto:info@jornades.org">info@jornades.org</a>
+          </li>
+          <li>
+            <ul id="socialmedia">
+              <li>
+                <a class="icona" href=""><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a class="icona" href=""><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a class="icona" href=""><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a class="icona" href=""><i class="fab fa-youtube"></i></a>
+              </li>
+            </ul>
+          </li>
+        </ul>-->
+      </div>
+      <div id="footermenu">
+        <ul>
+          <li><a href="">Qui Som</a></li>
+          <li><a href="">PolÃ­tica de privacitat</a></li>
+          <li><a href="">AvÃ­s legal</a></li>
+          <li><a href="">Cookies</a></li>
+        </ul>
+      </div>
+      <div id="credits">
+        <p>
+          Â© BCN Cultural. Fotografies
+          <a target="_blank" href="https://pixabay.com">Pixabay</a>,
+          <a target="_blank" href="https://unsplash.com">Unsplash</a> i
+          <a target="_blank" href="https://wikipedia.org">Wikipedia</a>
+        </p>
+        <p>
+          Activitat realitzada per Ví­ctor Hugo Mateu Piñol, per a l'assignatura
+          Eines <abbr title="HyperText Markup Language">HTML</abbr> i
+          <abbr title="Cascading Style Sheets">CSS</abbr>. Primer semestre del
+          curs 2019-2020.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

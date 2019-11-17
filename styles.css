@@ -1,0 +1,180 @@
+body {
+  color: #183661;
+  font-family: "Merriweather", serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1160px;
+}
+
+/*
+HEADER
+*/
+
+#header {
+  background-color: #183661;
+  overflow: hidden;
+  font-family: "Merriweather Sans", sans-serif;
+  color: #e6ecf2;
+}
+
+#header a {
+  color: #e6ecf2;
+}
+
+#header a:hover,
+#header a.active {
+  color: #dd6b4d;
+}
+
+#headertop {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+#headerlogo {
+  text-align: center;
+  padding: 10px;
+}
+
+#headermenu {
+  text-transform: uppercase;
+  padding: 10px;
+  font-size: 1.5em;
+}
+
+#headermenu ul {
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+}
+
+#headermenu ul li {
+  display: inline;
+  padding: 5px 15px;
+}
+
+#headermenu ul a {
+  text-decoration: none;
+}
+
+/*
+MAIN
+*/
+#main {
+  background-color: #e6ecf2;
+  color: #183661;
+  padding: 0 0 50px;
+}
+/* MAIN - ARREL */
+.continents,
+.countries {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.continent,
+.country {
+  color: #183661;
+  padding: 20px;
+  margin: 0 0 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.continent:hover,
+.country:hover {
+  background-color: #cad4dc;
+  color: #dd6b4d;
+}
+
+.continent a,
+.country a {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.continent img,
+.country img {
+  width: 100%;
+  object-fit: cover;
+  margin: 0 0 10px;
+  border-radius: 4px;
+}
+.continent .caption,
+.country .caption {
+  padding: 0 0 10px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#map {
+  height: 300px;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+  #headertop {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  #headerlogo {
+    order: 1;
+  }
+  #headermenu {
+    align-self: flex-end;
+  }
+  #headermenu ul {
+    flex-flow: row;
+    justify-content: center;
+  }
+
+  section {
+    padding: 70px 10px 20px;
+  }
+
+  .continents,
+  .countries {
+    flex-flow: row wrap;
+  }
+  .continent,
+  .country {
+    flex: 0 0 24%;
+  }
+  .continent .caption,
+  .country .caption {
+    font-size: 1.25em;
+  }
+
+  #footermenu ul {
+    flex-flow: row;
+  }
+}
+
+/* Dispositivos grandes (ordenadores, 992px y superior) */
+@media (min-width: 992px) {
+  .continent .caption,
+  .coumtry .caption {
+    font-size: 1.5em;
+  }
+}
