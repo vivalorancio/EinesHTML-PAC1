@@ -80,7 +80,6 @@ async function getGeoData(code) {
 
 export async function getCountry(countryname) {
   const country = await restCountries.findByFullName(countryname);
-  console.log(country[0]);
   let map = L.map("map").setView(country[0].latlng, 5);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
