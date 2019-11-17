@@ -26,7 +26,7 @@ let wikiurl;
 export function getSumari(name) {
   const sumari = document.querySelector(".sumari");
   let wikiurl = "";
-  wiki()
+  wiki({ apiUrl: "https://en.wikipedia.org/w/api.php" })
     .page(name)
     .then(page => {
       wikiurl = page.url();
