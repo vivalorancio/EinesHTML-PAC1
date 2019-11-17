@@ -33,6 +33,7 @@ export function getSumari(name) {
     .then(text => {
       sumari.innerHTML = text;
       const a = document.createElement("a");
+      a.target = "_blank";
       a.innerHTML = "Wikipedia";
       a.href = wikiurl;
       sumari.appendChild(a);
@@ -80,7 +81,7 @@ async function getGeoData(code) {
 
 export async function getCountry(countryname) {
   const country = await restCountries.findByName(countryname);
-
+  console.log(country[0]);
   map = L.map("map").setView(country[0].latlng, 5);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
@@ -90,6 +91,29 @@ export async function getCountry(countryname) {
   const geodata = await getGeoData(country[0].alpha3Code.toLowerCase());
   const geoLayer = L.geoJson().addTo(map);
   geoLayer.addData(geodata);
+
+  const uldades = document.querySelector("#uldades");
+
+  let lidades = document.createElement("li");
+  lidades.innerHTML = "<span>Native Name:</span> " + country[0].nativeName;
+  uldades.appendChild(lidades);
+  lidades = document.createElement("li");
+  lidades.innerHTML = "<span>Capital:</span> " + country[0].capital;
+  uldades.appendChild(lidades);
+  lidades = document.createElement("li");
+  lidades.innerHTML = "<span>Population:</span> " + country[0].population;
+  uldades.appendChild(lidades);
+  let langlist = "";
+  for (let i = 0; i < country[0].languages.length; i += 1) {
+    if (i != 0) langlist += ", ";
+    langlist += country[0].languages[i].name;
+  }
+  lidades = document.createElement("li");
+  lidades.innerHTML = "<span>Languages:</span> " + langlist;
+  uldades.appendChild(lidades);
+  lidades = document.createElement("li");
+  lidades.innerHTML = "<span>Timezones:</span> " + country[0].timezones.join();
+  uldades.appendChild(lidades);
 }
 
 window.onload = () => {

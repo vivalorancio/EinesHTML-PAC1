@@ -78,7 +78,12 @@ MAIN
   color: #183661;
   padding: 0 0 50px;
 }
-
+a {
+  color: #dd6b4d;
+}
+a:hover {
+  text-decoration: none;
+}
 section {
   padding: 20px 10px;
   box-sizing: border-box;
@@ -87,8 +92,12 @@ h1 {
   font-size: 2em;
 }
 
-/* MAIN - ARREL */
-.continents,
+p.sumari {
+  margin: 20px 0;
+}
+#map-container {
+  margin: 20px 0;
+}
 .countries {
   display: flex;
   flex-flow: column nowrap;
@@ -132,6 +141,14 @@ h1 {
 
 #map {
   height: 300px;
+}
+
+#uldades {
+  margin: 20px 0;
+  list-style: none;
+}
+#uldades li span {
+  font-weight: bold;
 }
 
 #footer {
