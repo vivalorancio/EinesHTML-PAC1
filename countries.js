@@ -72,7 +72,6 @@ export function getCountries(continent) {
     }
   });
 }
-let map;
 
 async function getGeoData(code) {
   const response = await fetch(`/data/${code}.geo.json`);
@@ -80,9 +79,9 @@ async function getGeoData(code) {
 }
 
 export async function getCountry(countryname) {
-  const country = await restCountries.findByName(countryname);
+  const country = await restCountries.findByFullName(countryname);
   console.log(country[0]);
-  map = L.map("map").setView(country[0].latlng, 5);
+  let map = L.map("map").setView(country[0].latlng, 5);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
