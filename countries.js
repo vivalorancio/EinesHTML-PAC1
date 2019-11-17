@@ -21,8 +21,6 @@ export function capitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-let wikiurl;
-
 export function getSumari(name) {
   const sumari = document.querySelector(".sumari");
   let wikiurl = "";
@@ -48,7 +46,6 @@ export function getCountries(continent) {
 
     for (let i = 0; i < countries.length; i += 1) {
       const country = countries[i].name.replace(/\([^()]*\)/g, "");
-      console.log(countries[i].name);
 
       const divcountry = document.createElement("div");
       divcountry.className = "country";
@@ -76,14 +73,13 @@ export function getCountries(continent) {
 }
 let map;
 
-async function getGeoData(cca3) {
-  const response = await fetch(`/data/${cca3}.geo.json`);
+async function getGeoData(code) {
+  const response = await fetch(`/data/${code}.geo.json`);
   return await response.json();
 }
 
 export async function getCountry(countryname) {
   const country = await restCountries.findByName(countryname);
-  console.log(country[0]);
 
   map = L.map("map").setView(country[0].latlng, 5);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -92,12 +88,11 @@ export async function getCountry(countryname) {
   }).addTo(map);
 
   const geodata = await getGeoData(country[0].alpha3Code.toLowerCase());
-  console.log(geodata);
   const geoLayer = L.geoJson().addTo(map);
   geoLayer.addData(geodata);
 }
 
-window.onload = async => {
+window.onload = () => {
   const countryname = decodeURI(getUrlVars().name);
 
   const hcountry = document.querySelector("#countryname");

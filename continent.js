@@ -9,5 +9,4 @@ window.onload = () => {
 
   getSumari(continent);
   getCountries(continent);
-  console.log(name);
 };

@@ -44,12 +44,6 @@ HEADER
   color: #dd6b4d;
 }
 
-#headertop {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-}
-
 #headerlogo {
   text-align: center;
   padding: 10px;
@@ -84,6 +78,15 @@ MAIN
   color: #183661;
   padding: 0 0 50px;
 }
+
+section {
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 2em;
+}
+
 /* MAIN - ARREL */
 .continents,
 .countries {
@@ -131,13 +134,72 @@ MAIN
   height: 300px;
 }
 
+#footer {
+  background-color: #183661;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: #e6ecf2;
+  text-align: center;
+  padding: 10px 0 30px;
+  box-sizing: border-box;
+}
+
+#footer a {
+  color: #dd6b4d;
+  text-decoration: none;
+}
+#footer a:hover {
+  color: #e6ecf2;
+  text-decoration: none;
+}
+#contact img {
+  padding: 0 0 10px;
+  max-width: 50%;
+}
+
+#contact ul {
+  padding: 0 0 10px;
+  text-align: left;
+  list-style: none;
+}
+/*
+ul#socialmedia {
+  padding: 15px 0 10px;
+  text-align: center;
+  font-size: 1.6em;
+}
+
+ul#socialmedia li {
+  padding: 0 10px;
+  display: inline;
+  line-height: 1.2em;
+}*/
+
+#footermenu ul {
+  padding: 0 0 20px;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 1.1em;
+}
+
+#footermenu ul li {
+  padding: 0 10px 10px;
+  display: inline;
+}
+
+#credits {
+  font-size: 0.8em;
+}
+#credits p {
+  padding: 0 0 10px;
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 768px) {
-  #headertop {
-    flex-flow: row wrap;
-    justify-content: space-between;
-  }
   #headerlogo {
     order: 1;
   }
@@ -157,9 +219,11 @@ MAIN
   .countries {
     flex-flow: row wrap;
   }
-  .continent,
+  .continent {
+    flex: 0 0 33%;
+  }
   .country {
-    flex: 0 0 24%;
+    flex: 0 0 25%;
   }
   .continent .caption,
   .country .caption {
