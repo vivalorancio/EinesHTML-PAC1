@@ -31,8 +31,9 @@ export function getSumari(name) {
       return page.summary();
     })
     .then(text => {
-      sumari.innerHTML = text;
+      sumari.innerHTML = text + " ";
       const a = document.createElement("a");
+      a.className = "wikilink";
       a.target = "_blank";
       a.innerHTML = "Wikipedia";
       a.href = wikiurl;
@@ -89,6 +90,12 @@ export async function getCountry(countryname) {
   const geodata = await getGeoData(country[0].alpha3Code.toLowerCase());
   const geoLayer = L.geoJson().addTo(map);
   geoLayer.addData(geodata);
+
+  const dadesflag = document.querySelector("#dadesflag");
+  const flag = document.createElement("img");
+  flag.src = country[0].flag;
+  flag.alt = capitalize(countryname);
+  dadesflag.appendChild(flag);
 
   const uldades = document.querySelector("#uldades");
 

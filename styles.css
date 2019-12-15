@@ -37,6 +37,7 @@ HEADER
 
 #header a {
   color: #e6ecf2;
+  transition: color 0.5s ease-out;
 }
 
 #header a:hover,
@@ -47,6 +48,25 @@ HEADER
 #headerlogo {
   text-align: center;
   padding: 10px;
+  display: flex;
+  flex-flow: column;
+  letter-spacing: -1px;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#headerlogo #logoimg {
+  height: 80px;
+  padding: 0 0 20px 0;
+}
+
+#headerlogo #logoimg img {
+  height: 100%;
+}
+
+#headerlogo a {
+  color: #dd6b4d;
+  text-decoration: none;
 }
 
 #headermenu {
@@ -111,6 +131,7 @@ p.sumari {
   margin: 0 0 10px;
   box-sizing: border-box;
   border-radius: 4px;
+  transition: background-color 1s ease-out, color 1s ease-out;
 }
 .continent:hover,
 .country:hover {
@@ -140,10 +161,31 @@ p.sumari {
   font-size: 1.5em;
 }
 
+#continentmain {
+  margin: 20px 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+#continentmain img {
+  padding: 0 0 10px;
+}
+
 #map {
   height: 300px;
 }
 
+#dades {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#dadesflag img {
+  width: 100%;
+  object-fit: cover;
+}
 #uldades {
   margin: 20px 0;
   list-style: none;
@@ -171,16 +213,28 @@ p.sumari {
   color: #e6ecf2;
   text-decoration: none;
 }
+#contact {
+  max-width: 350px;
+}
 #contact img {
   padding: 0 0 10px;
-  max-width: 50%;
+  /* max-width: 50%; */
+  clip-path: polygon(33% 0, 100% 0%, 67% 100%, 0% 100%);
+  height: 80px;
 }
-
-#contact ul {
+#contact {
+  font-family: "Merriweather Sans", sans-serif;
+  letter-spacing: -1px;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #dd6b4d;
+  padding: 0 0 10px;
+}
+/* #contact ul {
   padding: 0 0 10px;
   text-align: left;
   list-style: none;
-}
+} */
 
 #footermenu ul {
   padding: 0 0 20px;
@@ -207,8 +261,22 @@ p.sumari {
 
 @media (min-width: 768px) {
   #headerlogo {
+    padding: 30px;
     order: 1;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
   }
+  #headerlogo #logoimg {
+    height: 118px;
+    padding: 0 20px 0 0;
+  }
+  #headerlogo #logotitle {
+    width: 350px;
+    text-align: left;
+  }
+
   #headermenu {
     align-self: flex-end;
   }
@@ -234,6 +302,35 @@ p.sumari {
   .continent .caption,
   .country .caption {
     font-size: 1.25em;
+  }
+
+  #continentmain {
+    flex-flow: row;
+    align-items: flex-start;
+  }
+  #continentmain > img {
+    padding: 0 10px 0 0;
+    flex: 1 0 0;
+    max-width: 33%;
+  }
+
+  p.sumari {
+    margin: 0;
+    flex: 2 0 0;
+  }
+
+  #dades {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #dadesflag {
+    max-width: 33%;
+    flex: 1 0 0;
+    padding: 0 20px 0 0;
+  }
+
+  #dadesfacts {
+    flex: 2 0 0;
   }
 
   #footermenu ul {
