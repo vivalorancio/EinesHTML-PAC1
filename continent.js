@@ -9,20 +9,6 @@ let continentimages = [
   { name: "oceania", sizes: [100, 282, 412, 496, 589, 640] }
 ];
 
-// <img
-// sizes="(max-width: 768px) 100vw, (max-width: 1440px) 33vw, 640px"
-// srcset="
-//   /img/oceania_100.jpg 100w,
-//   /img/oceania_282.jpg 282w,
-//   /img/oceania_412.jpg 412w,
-//   /img/oceania_496.jpg 496w,
-//   /img/oceania_589.jpg 589w,
-//   /img/oceania_640.jpg 640w
-// "
-// src="/img/oceania_640.jpg"
-// alt="Oceania"
-// />
-
 function getImgSet(continentname) {
   const continentimg = continentimages.filter(
     item => item.name === continentname
