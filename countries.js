@@ -35,6 +35,7 @@ export function getSumari(name) {
       const a = document.createElement("a");
       a.className = "wikilink";
       a.target = "_blank";
+      a.rel = "noreferrer";
       a.innerHTML = "Wikipedia";
       a.href = wikiurl;
       sumari.appendChild(a);

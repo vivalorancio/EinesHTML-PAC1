@@ -13,7 +13,6 @@ function getImgSet(continentname) {
   const continentimg = continentimages.filter(
     item => item.name === continentname
   )[0];
-  console.log(continentimg);
 
   let sizes =
     "(max-width: 768px) 100vw, (max-width: 1440px) 33vw, " +
@@ -22,7 +21,7 @@ function getImgSet(continentname) {
   var srcset = "";
   for (let i = 0; i < continentimg.sizes.length; i++) {
     let size = continentimg.sizes[i];
-    srcset += `/img/${continentname}_${size}.jpg ${size}vw`;
+    srcset += `/img/${continentname}_${size}.jpg ${size}w`;
     if (i < continentimg.sizes.length - 1) srcset += ",";
     srcset += "\n";
   }
@@ -35,10 +34,6 @@ function getImgSet(continentname) {
   iconti.srcset = srcset;
   iconti.src = src;
   iconti.sizes = sizes;
-
-  console.log(sizes);
-  console.log(srcset);
-  console.log(src);
 }
 
 window.onload = () => {

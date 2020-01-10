@@ -9,12 +9,20 @@
     <meta name="language" content="en" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
+      content="width=device-width, initial-scale=1, maximum-scale=5"
     />
 
     <title>Eines HTML i CSS | Countries of the World</title>
 
     <link rel="shortcut icon" href="/img/logo.ico" />
+
+    <link rel="preload" href="./styles.css" as="style" />
+    <link
+      rel="preload"
+      href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+      as="style"
+    />
+    <link rel="preload" href="./countries.js" as="script" />
 
     <link rel="stylesheet" href="./styles.css" />
     <link
@@ -23,7 +31,6 @@
       integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
       crossorigin=""
     />
-    <script src="./countries.js"></script>
   </head>
 
   <body>
@@ -89,5 +96,6 @@
         </p>
       </div>
     </div>
+    <script src="./countries.js"></script>
   </body>
 </html>
